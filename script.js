@@ -5,26 +5,34 @@
 //     event.target.style.backgroundColor = "blue";
 //   }, 50);
 // }
+const container = document.querySelector(".grid-container");
 const whiteBtn = document.querySelector(".white-btn");
 const blackBtn = document.querySelector(".black-btn");
 const resetBtn = document.querySelector(".reset-btn");
+let nodesToRemove = container.getElementsByClassName("grid");
+function clearNodes() {
+  for (let i = nodesToRemove.length - 1; i >= 0; i--) {
+    let singleNode = nodesToRemove[i];
+    container.removeChild(singleNode);
+  }
+}
 let currentColor;
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
 whiteBtn.addEventListener("click", () => {
   currentColor = "white";
-  addDivs(50);
+  if (nodesToRemove.length < 50) {
+    addDivs(50);
+  }
 });
 blackBtn.addEventListener("click", () => {
   currentColor = "black";
-  addDivs(50);
+  if (nodesToRemove.length < 50) {
+    addDivs(50);
+  }
 });
-// resetBtn.addEventListener("click", () => {
-//   let divAll = document.querySelectorAll("div");
-//   divAll.remove();
-//   addDivs(50);
-// });
+resetBtn.addEventListener("click", clearNodes);
 function colorPicker(event) {
   if (event.type === "mouseover" && !mouseDown) {
     return;
@@ -33,7 +41,6 @@ function colorPicker(event) {
   }
 }
 function addDivs(divNumber) {
-  const container = document.querySelector(".grid-container");
   let styleSheet = document.styleSheets[0];
   let divNeeded = divNumber * divNumber;
   let sizeCalc = `${650 / divNumber}`;
