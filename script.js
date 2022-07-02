@@ -1,18 +1,23 @@
-// Add function that takes input, creates ${input} number of divs inside the container.
-// All the divs should share same space filling the container fully.
-function hover(event) {
-  event.target.style.backgroundColor = "blue";
+// function hover(event) {
+//   event.target.style.backgroundColor = "blue";
 
-  setTimeout(function () {
-    event.target.style.backgroundColor = "";
-  }, 150);
-}
-// function colorPicker(event) {
-//   event.classList.add("grid-blue");
+//   setTimeout(function () {
+//     event.target.style.backgroundColor = "blue";
+//   }, 50);
 // }
-// div.addEventListener("click"), colorPicker;
+let mouseDown = false;
+document.body.onmousedown = () => (mouseDown = true);
+document.body.onmouseup = () => (mouseDown = false);
+function colorPicker(event) {
+  if (event.type === "mouseover" && !mouseDown) {
+    return;
+  } else {
+    event.target.style.backgroundColor = "green";
+  }
+}
 function addDivs(divNumber) {
   const container = document.querySelector(".container");
+
   let styleSheet = document.styleSheets[0];
   let divNeeded = divNumber * divNumber;
   let sizeCalc = `${650 / divNumber}`;
@@ -22,9 +27,11 @@ function addDivs(divNumber) {
 
   for (let i = 0; i < divNeeded; i++) {
     let div = document.createElement("div");
-    container.appendChild(div);
     div.classList.add("grid");
-    div.addEventListener("mouseover", hover);
+    // div.addEventListener("mouseover", hover);
+    div.addEventListener("mouseover", colorPicker);
+    div.addEventListener("mousedown", colorPicker);
+    container.appendChild(div);
   }
 }
-addDivs(40);
+addDivs(50);

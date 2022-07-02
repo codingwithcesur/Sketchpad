@@ -8,8 +8,10 @@
 }
 
 .grid {
-  background-color: red;
+  /* background-color: #fff; */
+  user-select: none;
 }
-/* .grid-blue {
+.grid-blue {
   background-color: blue;
-} */
+  transition-duration: 1s;
+}
