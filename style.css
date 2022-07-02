@@ -1,9 +1,24 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  display: flex;
+}
+button {
+  height: 45px;
+  width: 100px;
+}
+.grid-size-input {
+  height: 20px;
+  width: 135px;
+}
 .grid-container {
   display: flex;
   height: 650px;
   width: 650px;
   border: 5px solid rgb(0, 0, 0);
-  margin-left: auto;
+  /* margin-left: auto; */
   flex-wrap: wrap;
 }
 .grid {
