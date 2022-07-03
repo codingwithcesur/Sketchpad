@@ -7,8 +7,8 @@ const gridSizeBtn = document.querySelector(".grid-size-btn");
 let nodesToRemove = document.getElementsByClassName("grid");
 let currentColor;
 let mouseDown = false;
-container.onmousedown = () => (mouseDown = true);
-container.onmouseup = () => (mouseDown = false);
+document.body.onmousedown = () => (mouseDown = true);
+document.body.onmouseup = () => (mouseDown = false);
 
 function rainbow() {
   let o = Math.round,
