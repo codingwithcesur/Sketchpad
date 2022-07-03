@@ -9,17 +9,23 @@
     <title>Etch-a-Sketch</title>
   </head>
   <body>
+    <div class="grid-container" id="grid-container"></div>
     <div class="container">
-      <div class="grid-container" id="grid-container"></div>
       <div class="input-container">
+        <p class="grid-size-info">Size Changer</p>
         <button class="grid-size-btn">Set size</button>
-        <input type="text" class="grid-size-input" />
-        <p class="input-text"></p>
+        <input type="number" class="grid-size-input" />
+        <p class="grid-size-input-text">(5 Means 5x5)</p>
       </div>
-      <button class="black-btn">Black</button>
-      <button class="white-btn">White</button>
-      <button class="rainbow-btn">Rainbow</button>
-      <button class="reset-btn">Reset</button>
+      <div class="btn-container">
+        <p class="color-changer-info">Color changer</p>
+        <div class="color-changer">
+          <button class="black-btn">Black</button>
+          <button class="white-btn">White</button>
+          <button class="rainbow-btn">Rainbow</button>
+        </div>
+        <button class="reset-btn">Clear</button>
+      </div>
     </div>
   </body>
 </html>

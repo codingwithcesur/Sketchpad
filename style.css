@@ -1,17 +1,8 @@
-.input-container {
+body {
   display: flex;
-  flex-direction: column;
-}
-.container {
-  display: flex;
-}
-button {
-  height: 45px;
-  width: 100px;
-}
-.grid-size-input {
-  height: 20px;
-  width: 135px;
+  width: 1200px;
+  height: 655px;
+  background-color: rgb(189, 196, 223);
 }
 .grid-container {
   display: flex;
@@ -20,12 +11,83 @@ button {
   border: 5px solid rgb(0, 0, 0);
   /* margin-left: auto; */
   flex-wrap: wrap;
+  background-color: #fff;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  text-transform: uppercase;
 }
 .grid {
   /* background-color: rgb(0, 0, 0); */
   user-select: none;
 }
-.grid-blue {
-  background-color: blue;
-  transition-duration: 1s;
+
+button {
+  border: 2px solid rgba(139, 93, 93, 0.438);
+  height: 55px;
+  width: 120px;
+  font-size: 16px;
+  border-radius: 21px;
+}
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0px 0px 90px;
+}
+.color-changer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.black-btn {
+  background-color: black;
+  color: #fff;
+}
+.white-btn {
+  color: black;
+  background-color: #fff;
+}
+.color-changer-info {
+  font-size: 30px;
+  margin-left: 55px;
+}
+
+.rainbow-btn {
+  background-image: linear-gradient(
+    90deg,
+    #00c0ff 0%,
+    #ffcf00 49%,
+    #fc4f4f 80%,
+    #00c0ff 100%
+  );
+}
+.reset-btn {
+  border-radius: 35px;
+  margin: 40px 0px 0px 125px;
+  background-color: rgb(255, 255, 255);
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 0px 0px 140px;
+}
+.grid-size-btn {
+  margin: 0px 0px 4px 70px;
+  background-color: rgb(210, 221, 199);
+}
+.grid-size-input {
+  height: 20px;
+  width: 155px;
+  background-color: rgb(230, 215, 215);
+  margin-left: 50px;
+}
+.grid-size-info {
+  margin-left: 30px;
+  font-size: 30px;
+}
+.grid-size-input-text {
+  margin-left: 70px;
+  font-size: 15px;
 }

@@ -21,7 +21,7 @@ function rainbow() {
 
 function generateInput() {
   let getInputSize = document.querySelector(".grid-size-input").value;
-  let inputText = document.querySelector(".input-text");
+  let inputText = document.querySelector(".grid-size-input-text");
   if (getInputSize >= 2 && getInputSize <= 100) {
     if (nodesToRemove.length > getInputSize * 1) {
       for (let i = nodesToRemove.length - 1; i >= 0; i--) {
@@ -33,8 +33,7 @@ function generateInput() {
     inputText.textContent = "";
     addDivs(getInputSize);
   } else {
-    inputText.textContent =
-      "Enter a number between 2 and 100 (2 means 2x2 grid)";
+    inputText.textContent = "Enter a number between 2 and 100";
     return (getInputSize = "error");
   }
 }
