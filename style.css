@@ -30,6 +30,7 @@ button {
   width: 120px;
   font-size: 16px;
   border-radius: 21px;
+  margin: 5px;
 }
 .btn-container {
   display: flex;
@@ -66,6 +67,18 @@ button {
   border-radius: 35px;
   margin: 40px 0px 0px 125px;
   background-color: rgb(255, 255, 255);
+}
+.button-active {
+  border: 6px solid transparent;
+  border-image: linear-gradient(
+    to bottom right,
+    #b827fc 0%,
+    #2c90fc 25%,
+    #b8fd33 50%,
+    #fec837 75%,
+    #fd1892 100%
+  );
+  border-image-slice: 1;
 }
 
 .input-container {

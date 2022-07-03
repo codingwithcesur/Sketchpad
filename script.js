@@ -18,7 +18,11 @@ function rainbow() {
     "rgba(" + o(r() * s) + "," + o(r() * s) + "," + o(r() * s) + "," + 1 + ")"
   );
 }
-
+function removeActive() {
+  whiteBtn.classList.remove("button-active");
+  blackBtn.classList.remove("button-active");
+  rainbowBtn.classList.remove("button-active");
+}
 function generateInput() {
   let getInputSize = document.querySelector(".grid-size-input").value;
   let inputText = document.querySelector(".grid-size-input-text");
@@ -60,12 +64,18 @@ function addDivs(divNumber) {
 
 whiteBtn.addEventListener("click", () => {
   currentColor = "white";
+  removeActive();
+  whiteBtn.classList.add("button-active");
 });
 blackBtn.addEventListener("click", () => {
   currentColor = "black";
+  removeActive();
+  blackBtn.classList.add("button-active");
 });
 rainbowBtn.addEventListener("click", () => {
   currentColor = "rainbow";
+  removeActive();
+  rainbowBtn.classList.add("button-active");
 });
 resetBtn.addEventListener("click", clearNodes);
 function colorPicker(event) {
