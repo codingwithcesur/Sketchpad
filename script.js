@@ -1,21 +1,31 @@
-// function hover(event) {
-//   event.target.style.backgroundColor = "blue";
-
-//   setTimeout(function () {
-//     event.target.style.backgroundColor = "blue";
-//   }, 50);
-// }
-let styleSheet = document.styleSheets[0];
 let container = document.querySelector(".grid-container");
 const whiteBtn = document.querySelector(".white-btn");
 const blackBtn = document.querySelector(".black-btn");
 const resetBtn = document.querySelector(".reset-btn");
+const rainbowBtn = document.querySelector(".rainbow-btn");
 const gridSizeBtn = document.querySelector(".grid-size-btn");
 let nodesToRemove = document.getElementsByClassName("grid");
 let currentColor;
 let mouseDown = false;
 container.onmousedown = () => (mouseDown = true);
 container.onmouseup = () => (mouseDown = false);
+
+function rainbow() {
+  let o = Math.round,
+    r = Math.random,
+    s = 255;
+  return (
+    "rgba(" +
+    o(r() * s) +
+    "," +
+    o(r() * s) +
+    "," +
+    o(r() * s) +
+    "," +
+    r().toFixed(1) +
+    ")"
+  );
+}
 
 function generateInput() {
   let getInputSize = document.querySelector(".grid-size-input").value;
@@ -45,9 +55,6 @@ function clearNodes() {
 function addDivs(divNumber) {
   let divNeeded = divNumber * divNumber;
   let sizeCalc = `${650 / divNumber}`;
-
-  // styleSheet.insertRule(`.grid {height:${sizeCalc}px;}`, 0);
-  // styleSheet.insertRule(`.grid {width:${sizeCalc}px;}`, 0);
   for (let i = 0; i < divNeeded; i++) {
     let div = document.createElement("div");
     div.style.width = `${sizeCalc}px`;
@@ -62,20 +69,19 @@ function addDivs(divNumber) {
 
 whiteBtn.addEventListener("click", () => {
   currentColor = "white";
-  if (nodesToRemove.length < getInputNumber) {
-    addDivs(getInputNumber);
-  }
 });
 blackBtn.addEventListener("click", () => {
   currentColor = "black";
-  if (nodesToRemove.length < getInputNumber) {
-    addDivs(getInputNumber);
-  }
+});
+rainbowBtn.addEventListener("click", () => {
+  currentColor = "rainbow";
 });
 resetBtn.addEventListener("click", clearNodes);
 function colorPicker(event) {
   if (event.type === "mouseover" && !mouseDown) {
     return;
+  } else if (currentColor === "rainbow") {
+    event.target.style.backgroundColor = rainbow();
   } else {
     event.target.style.backgroundColor = currentColor;
   }
