@@ -15,15 +15,7 @@ function rainbow() {
     r = Math.random,
     s = 255;
   return (
-    "rgba(" +
-    o(r() * s) +
-    "," +
-    o(r() * s) +
-    "," +
-    o(r() * s) +
-    "," +
-    r().toFixed(1) +
-    ")"
+    "rgba(" + o(r() * s) + "," + o(r() * s) + "," + o(r() * s) + "," + 1 + ")"
   );
 }
 
