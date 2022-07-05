@@ -70,17 +70,53 @@ button {
 }
 .button-active {
   border: 6px solid transparent;
-  border-image: linear-gradient(
+  /* border-image: linear-gradient(
     to bottom right,
     #b827fc 0%,
     #2c90fc 25%,
     #b8fd33 50%,
     #fec837 75%,
     #fd1892 100%
-  );
-  border-image-slice: 1;
+  ); */
+  /* border-image-slice: 1; */
+  animation: border-anime linear 5s infinite;
 }
+@keyframes border-anime {
+  0% {
+    border-image: linear-gradient(
+      to bottom right,
+      #b827fc 0%,
+      #2c90fc 25%,
+      #b8fd33 50%,
+      #fec837 75%,
+      #fd1892 100%
+    );
+    border-image-slice: 1;
+  }
 
+  50% {
+    border-image: linear-gradient(
+      to bottom left,
+      #b827fc 0%,
+      #2c90fc 25%,
+      #b8fd33 50%,
+      #fec837 75%,
+      #fd1892 100%
+    );
+    border-image-slice: 1;
+  }
+  100% {
+    border-image: linear-gradient(
+      to bottom right,
+      #b827fc 0%,
+      #2c90fc 25%,
+      #b8fd33 50%,
+      #fec837 75%,
+      #fd1892 100%
+    );
+    border-image-slice: 1;
+  }
+}
 .input-container {
   display: flex;
   flex-direction: column;
