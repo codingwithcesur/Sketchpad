@@ -65,7 +65,7 @@ button {
 }
 .reset-btn {
   border-radius: 35px;
-  margin: 40px 0px 0px 125px;
+  margin: 30px 0px 0px 125px;
   background-color: rgb(255, 255, 255);
 }
 .button-active {
@@ -139,4 +139,19 @@ button {
 .grid-size-input-text {
   margin-left: 70px;
   font-size: 15px;
+}
+
+.color-container {
+  display: flex;
+  width: 300px;
+  gap: 7.5px;
+  margin: 15px 0px 0px 50px;
+}
+.color {
+  width: 30px;
+  height: 30px;
+}
+.button-active.color {
+  border: 4px solid transparent;
+  animation: border-anime linear 5s infinite;
 }

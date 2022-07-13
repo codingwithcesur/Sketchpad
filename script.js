@@ -1,4 +1,5 @@
 let container = document.querySelector(".grid-container");
+let colors = document.querySelectorAll(".color");
 const whiteBtn = document.querySelector(".white-btn");
 const blackBtn = document.querySelector(".black-btn");
 const resetBtn = document.querySelector(".reset-btn");
@@ -10,6 +11,15 @@ let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
 
+for (let i = 0; i < colors.length; i++) {
+  colors[i].style.backgroundColor = colors[i].classList[1];
+
+  colors[i].addEventListener("click", () => {
+    removeActive();
+    colors[i].classList.add("button-active");
+    currentColor = colors[i].classList[1];
+  });
+}
 function rainbow() {
   let o = Math.round,
     r = Math.random,
@@ -19,6 +29,14 @@ function rainbow() {
   );
 }
 function removeActive() {
+  colors[0].classList.remove("button-active");
+  colors[1].classList.remove("button-active");
+  colors[2].classList.remove("button-active");
+  colors[3].classList.remove("button-active");
+  colors[4].classList.remove("button-active");
+  colors[5].classList.remove("button-active");
+  colors[6].classList.remove("button-active");
+  colors[7].classList.remove("button-active");
   whiteBtn.classList.remove("button-active");
   blackBtn.classList.remove("button-active");
   rainbowBtn.classList.remove("button-active");
